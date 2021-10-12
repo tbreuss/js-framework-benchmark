@@ -1,0 +1,16 @@
+{
+  "name": "js-framework-benchmark-mithril-hyperscript",
+  "version": "2.0.4",
+  "description": "Benchmark for Mithrill 2.0.4 framework",
+  "js-framework-benchmark": {
+    "frameworkVersionFromPackage": "mithril:mithril-hyperscript"
+  },
+  "scripts": {
+    "build-prod": "esbuild --minify --minify-syntax --minify-identifiers --bundle --format=esm --outfile=index.min.js src/index.js",
+    "build-dev": "esbuild --bundle --watch --outfile=index.min.js src/index.js"
+  },
+  "devDependencies": {
+    "esbuild": "0.13.3",
+    "mithril": "2.0.4"
+  }
+}
