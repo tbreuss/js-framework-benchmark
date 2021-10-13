@@ -3,16 +3,17 @@ import m from 'mithril'
 const adjectives = ['pretty', 'large', 'big', 'small', 'tall', 'short', 'long', 'handsome', 'plain', 'quaint', 'clean', 'elegant', 'easy', 'angry', 'crazy', 'helpful', 'mushy', 'odd', 'unsightly', 'adorable', 'important', 'inexpensive', 'cheap', 'expensive', 'fancy']
 const colours = ['red', 'yellow', 'blue', 'green', 'pink', 'brown', 'purple', 'brown', 'white', 'black', 'orange']
 const nouns = ['table', 'chair', 'house', 'bbq', 'desk', 'car', 'pony', 'cookie', 'sandwich', 'burger', 'pizza', 'mouse', 'keyboard']
+let id = 1
 
 const random = (max) => {
   return Math.round(Math.random() * 1000) % max
 }
 
-const buildData = (count = 1000, state) => {
+const buildData = (count = 1000) => {
   let data = []
   for (let i = 0; i < count; i++)
     data.push({
-      id: state.id++,
+      id: id++,
       label:
         adjectives[random(adjectives.length)] +
         ' ' +
@@ -25,8 +26,7 @@ const buildData = (count = 1000, state) => {
 
 const State = () => ({
   data: [],
-  selected: undefined,
-  id: 1,
+  selected: undefined
 })
 
 const Actions = state => ({
@@ -34,15 +34,15 @@ const Actions = state => ({
     state.selected = id
   },
   run: () => {
-    state.data = buildData(1000, state)
+    state.data = buildData(1000)
     state.selected = undefined
   },
   runLots: () => {
-    state.data = buildData(10000, state)
+    state.data = buildData(10000)
     state.selected = undefined
   },
   add: () => {
-    state.data = state.data.concat(buildData(1000, state))
+    state.data = state.data.concat(buildData(1000))
   },
   update: () => {
     for (let i = 0; i < state.data.length; i += 10) {
@@ -101,7 +101,7 @@ m.mount(document.getElementById('main'), () => {
       m('div.jumbotron',
         m('div.row',
           m('div.col-md-6',
-            m('h1', 'Mithril-optimized-"keyed"')
+            m('h1', 'Mithril Hyperscript "keyed"')
           ),
           ButtonGroup(actions)
         )
