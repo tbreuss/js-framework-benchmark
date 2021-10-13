@@ -1,7 +1,7 @@
 {
-  "name": "js-framework-benchmark-mithril-hyperscript",
+  "name": "js-framework-benchmark-mithril-hyperscript-2.0.4",
   "version": "2.0.4",
-  "description": "Benchmark for Mithrill 2.0.4 framework",
+  "description": "Benchmark for Mithril 2.0.4 framework",
   "js-framework-benchmark": {
     "frameworkVersionFromPackage": "mithril:mithril-hyperscript"
   },

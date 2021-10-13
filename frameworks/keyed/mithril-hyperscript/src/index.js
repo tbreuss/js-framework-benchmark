@@ -86,7 +86,7 @@ const Row = (row, state, actions) => m('tr', {key: row.id, class: row.id === sta
   m('td.col-md-1', row.id),
   m('td.col-md-4', m('a', {onclick: () => actions.select(row.id)}, row.label)),
   m('td.col-md-1', m('a', {onclick: () => actions.remove(row.id)},
-    m('span.glyphicon.glyphicon-remove', {'aria-hidden': true})
+    m('span.glyphicon.glyphicon-remove', {'aria-hidden': 'true'})
   )),
   m('td.col-md-6', '')
 )
