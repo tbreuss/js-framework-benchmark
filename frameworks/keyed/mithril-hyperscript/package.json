@@ -6,8 +6,8 @@
     "frameworkVersionFromPackage": "mithril:mithril-hyperscript"
   },
   "scripts": {
-    "build-prod": "esbuild --minify --minify-syntax --minify-identifiers --bundle --format=esm --outfile=index.min.js src/index.js",
-    "build-dev": "esbuild --bundle --watch --outfile=index.min.js src/index.js"
+    "build-prod": "esbuild --minify --minify-syntax --minify-identifiers --bundle --format=esm --outfile=dist/index.min.js src/index.js",
+    "build-dev": "esbuild --bundle --watch --outfile=dist/index.min.js src/index.js"
   },
   "devDependencies": {
     "esbuild": "0.13.3",
